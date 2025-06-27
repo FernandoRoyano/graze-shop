@@ -18,6 +18,7 @@ const sizes = [
   { label: 'Todos', value: '' },
   { label: 'Caja pequeña', value: 'pequeña' },
   { label: 'Caja mediana', value: 'mediana' },
+  { label: 'Caja grande', value: 'grande' },
   { label: 'Caja premium', value: 'premium' },
 ];
 
@@ -40,6 +41,13 @@ const Sidebar: React.FC<SidebarProps> = ({ selectedType, onSelectType, minPrice,
       <button className="sidebar-hamburger" onClick={() => setOpen(!open)}>
         ☰
       </button>
+      {open && (
+        <div
+          className="sidebar-overlay"
+          onClick={() => setOpen(false)}
+          style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, zIndex: 398, background: 'rgba(0,0,0,0.01)' }}
+        />
+      )}
       <nav className={`sidebar ${open ? 'open' : ''}`}>
         <h3>Filtrar por tipo</h3>
         <ul>

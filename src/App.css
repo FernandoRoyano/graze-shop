@@ -1676,3 +1676,39 @@ body {
   }
 }
 /* --- Fin Contacto Rápido y Zona de Entrega Elegante --- */
+
+.cart-sidebar-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 5000 !important;
+  display: none;
+}
+.cart-sidebar.open ~ .cart-sidebar-bg,
+.cart-sidebar-bg.active {
+  display: block !important;
+}
+@media (max-width: 600px) {
+  .cart-sidebar-bg {
+    display: block !important;
+    z-index: 9999 !important;
+    position: fixed !important;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+  .cart-sidebar.open {
+    z-index: 10000 !important;
+  }
+  .cart-close {
+    z-index: 11000 !important;
+    position: fixed !important;
+    top: 1.2rem;
+    right: 1.2rem;
+    background: #fff;
+    color: #181818;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px #0002;
+    padding: 0.1em 0.4em;
+  }
+}

@@ -244,6 +244,14 @@ function App() {
     // Si es válido, deja pasar (el <a> abrirá WhatsApp)
   };
 
+  // Cierra el sidebar de filtros si se abre el carrito
+  React.useEffect(() => {
+    if (cartOpen) {
+      const sidebar = document.querySelector('.sidebar.open');
+      if (sidebar) sidebar.classList.remove('open');
+    }
+  }, [cartOpen]);
+
   return (
     <Router>
       <Routes>
@@ -320,6 +328,12 @@ function App() {
                   </p>
                 </div>
               </aside>
+              {cartOpen && (
+                <div
+                  className="cart-sidebar-bg active"
+                  onClick={() => setCartOpen(false)}
+                />
+              )}
               <main className="main-content">
                 <Sidebar
                   selectedType={selectedType}
