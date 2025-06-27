@@ -66,9 +66,11 @@ function App() {
   const filteredProducts = products.filter(product => {
     const typeMatch = selectedType ? getProductType(product) === selectedType : true;
     const priceMatch = product.price >= minPrice && product.price <= maxPrice;
-    // Nuevo: filtro por tamaño
+    // Mejorado: filtro por tamaño solo para cajas con pequeña, mediana o grande
+    const sizeKeywords = ["pequeña", "mediana", "grande"];
+    const hasSizeKeyword = sizeKeywords.some(kw => product.name.toLowerCase().includes(kw));
     const sizeMatch = selectedSize
-      ? product.name.toLowerCase().includes(selectedSize)
+      ? (hasSizeKeyword && product.name.toLowerCase().includes(selectedSize))
       : true;
     return typeMatch && priceMatch && sizeMatch;
   });
