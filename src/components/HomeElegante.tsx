@@ -63,86 +63,98 @@ const faqs = [
 export default function HomeElegante() {
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
   return (
-    <div className="home-bg-elegante">
-      <div className="home-hero-elegante">
-        <img src={logo} alt="Logo Graze Santander" className="home-logo-elegante" />
-        <div className="home-hero-text">
-          <h1 className="home-title-elegante">Graze Santander</h1>
-          <p className="home-slogan-elegante">Tablas y cajas gourmet para regalar, celebrar y disfrutar</p>
-          <Link to="/tienda" className="home-btn-elegante">Ver productos</Link>
+    <div className="home-apple-bg">
+      {/* HEADER MINIMALISTA FIJO */}
+      <header className="home-apple-header">
+        <div className="home-apple-header-content">
+          <img src={logo} alt="Logo Graze Santander" className="home-apple-header-logo" />
+          <span className="home-apple-header-title">Graze Santander</span>
+          <Link to="/tienda" className="home-apple-header-btn">Tienda</Link>
         </div>
-      </div>
-      <section className="home-servicios-elegante">
-        <h2>Nuestros servicios</h2>
-        <div className="servicios-list-elegante">
+      </header>
+      {/* HERO MINIMALISTA */}
+      <section className="home-apple-hero" style={{marginTop:'90px'}}>
+        <img src={logo} alt="Logo Graze Santander" className="home-apple-logo" />
+        <h1 className="home-apple-title">Graze Santander</h1>
+        <p className="home-apple-slogan">Tablas y cajas gourmet para regalar, celebrar y disfrutar</p>
+        <Link to="/tienda" className="home-apple-btn">Ver productos</Link>
+      </section>
+      {/* SERVICIOS */}
+      <section className="home-apple-servicios">
+        <div className="home-apple-servicios-list">
           {servicios.map((s, i) => (
-            <div className="servicio-card-elegante" key={i}>
-              <div className="servicio-icon-elegante">{s.icon}</div>
-              <div className="servicio-titulo-elegante">{s.titulo}</div>
-              <div className="servicio-desc-elegante">{s.descripcion}</div>
+            <div className="home-apple-servicio" key={i}>
+              <div className="home-apple-servicio-icon">{s.icon}</div>
+              <div className="home-apple-servicio-titulo">{s.titulo}</div>
+              <div className="home-apple-servicio-desc">{s.descripcion}</div>
             </div>
           ))}
         </div>
       </section>
-      <section className="home-galeria-elegante">
-        <h2>Más vendidos</h2>
-        <div className="galeria-list-elegante">
+      {/* MÁS VENDIDOS */}
+      <section className="home-apple-masvendidos">
+        <h2 className="home-apple-section-title">Más vendidos</h2>
+        <div className="home-apple-masvendidos-list">
           {masVendidos.map((p) => (
-            <div key={p.id} className="galeria-img-elegante">
-              <img src={p.image} alt={p.name} />
-              <div style={{color:'#FFD700',fontWeight:'bold',fontSize:'1.1em'}}>{p.name}</div>
-              <div style={{color:'#fff',fontSize:'0.98em',marginBottom:4}}>{p.description}</div>
-              <div style={{color:'#FFD700',fontWeight:'bold'}}>€{p.price.toFixed(2)}</div>
+            <div key={p.id} className="home-apple-masvendido">
+              <img src={p.images[0]} alt={p.name} className="home-apple-masvendido-img" />
+              <div className="home-apple-masvendido-nombre">{p.name}</div>
+              <div className="home-apple-masvendido-desc">{p.description}</div>
+              <div className="home-apple-masvendido-precio">€{p.price.toFixed(2)}</div>
             </div>
           ))}
         </div>
       </section>
-      <section className="home-testimonios-elegante">
-        <h2>Testimonios</h2>
-        <div className="testimonios-list-elegante">
+      {/* TESTIMONIOS */}
+      <section className="home-apple-testimonios">
+        <div className="home-apple-testimonios-list">
           {testimonios.map((t, i) => (
-            <div className="testimonio-card-elegante" key={i}>
-              <div className="testimonio-texto-elegante">“{t.texto}”</div>
-              <div className="testimonio-nombre-elegante">- {t.nombre}</div>
+            <div className="home-apple-testimonio" key={i}>
+              <div className="home-apple-testimonio-texto">“{t.texto}”</div>
+              <div className="home-apple-testimonio-nombre">- {t.nombre}</div>
             </div>
           ))}
         </div>
       </section>
-      <section className="home-proceso-elegante">
-        <h2>¿Cómo funciona?</h2>
-        <div className="proceso-list-elegante">
-          <div className="proceso-paso-elegante"><b>1.</b> Elige tu producto</div>
-          <div className="proceso-paso-elegante"><b>2.</b> Personaliza y añade al carrito</div>
-          <div className="proceso-paso-elegante"><b>3.</b> Paga por Bizum o pide por WhatsApp</div>
-          <div className="proceso-paso-elegante"><b>4.</b> Recibe en casa o regala</div>
+      {/* PROCESO */}
+      <section className="home-apple-proceso">
+        <h2 className="home-apple-section-title">¿Cómo funciona?</h2>
+        <div className="home-apple-proceso-list">
+          <div className="home-apple-proceso-paso"><b>1.</b> Elige tu producto</div>
+          <div className="home-apple-proceso-paso"><b>2.</b> Personaliza y añade al carrito</div>
+          <div className="home-apple-proceso-paso"><b>3.</b> Paga por Bizum o pide por WhatsApp</div>
+          <div className="home-apple-proceso-paso"><b>4.</b> Recibe en casa o regala</div>
         </div>
       </section>
-      <section className="home-faq-elegante">
-        <h2>Preguntas Frecuentes</h2>
-        <div className="faq-list-elegante">
+      {/* FAQ */}
+      <section className="home-apple-faq">
+        <h2 className="home-apple-section-title">Preguntas Frecuentes</h2>
+        <div className="home-apple-faq-list">
           {faqs.map((faq, i) => (
-            <div className="faq-item-elegante" key={i}>
-              <button className="faq-q-elegante" onClick={() => setFaqOpen(faqOpen === i ? null : i)}>
+            <div className="home-apple-faq-item" key={i}>
+              <button className="home-apple-faq-q" onClick={() => setFaqOpen(faqOpen === i ? null : i)}>
                 {faq.pregunta} {faqOpen === i ? '▲' : '▼'}
               </button>
-              {faqOpen === i && <div className="faq-a-elegante">{faq.respuesta}</div>}
+              {faqOpen === i && <div className="home-apple-faq-a">{faq.respuesta}</div>}
             </div>
           ))}
         </div>
       </section>
-      <section className="contacto-rapido-elegante">
-        <div className="contacto-rapido-card-elegante">
+      {/* CONTACTO RÁPIDO */}
+      <section className="home-apple-contacto">
+        <div className="home-apple-contacto-card">
           <h3>Contacto rápido</h3>
           <p>¿Tienes dudas o quieres pedir por WhatsApp? ¡Escríbenos!</p>
-          <a href="https://wa.me/34600000000" target="_blank" rel="noopener noreferrer" className="contacto-rapido-btn-elegante">WhatsApp</a>
-          <a href="mailto:info@grazeshop.com" className="contacto-rapido-btn-elegante" style={{marginTop:'0.7em'}}>Email</a>
-          <a href="https://instagram.com/grazeshop" target="_blank" rel="noopener noreferrer" className="contacto-rapido-btn-elegante" style={{marginTop:'0.7em'}}>Instagram</a>
+          <a href="https://wa.me/34600000000" target="_blank" rel="noopener noreferrer" className="home-apple-contacto-btn">WhatsApp</a>
+          <a href="mailto:info@grazeshop.com" className="home-apple-contacto-btn" style={{marginTop:'0.7em'}}>Email</a>
+          <a href="https://instagram.com/grazeshop" target="_blank" rel="noopener noreferrer" className="home-apple-contacto-btn" style={{marginTop:'0.7em'}}>Instagram</a>
         </div>
       </section>
-      <section className="zona-entrega-elegante">
-        <div className="zona-entrega-card-elegante">
+      {/* ZONA DE ENTREGA */}
+      <section className="home-apple-zonaentrega">
+        <div className="home-apple-zonaentrega-card">
           <h3>Zona de entrega</h3>
-          <div className="zona-entrega-mapa-elegante">
+          <div className="home-apple-zonaentrega-mapa">
             <iframe
               title="Mapa Cantabria"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12297.96496402413!2d-3.819622!3d43.462305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd494b8c6b1e7e2b%3A0x40340b4fc3d2e10!2sCantabria!5e0!3m2!1ses!2ses!4v1719240000000!5m2!1ses!2ses"

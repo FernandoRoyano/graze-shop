@@ -3,7 +3,7 @@ export type Product = {
   name: string;
   price: number;
   description: string;
-  image: string;
+  images: string[]; // Ahora es un array de imágenes
 };
 
 export const products: Product[] = [
@@ -12,84 +12,110 @@ export const products: Product[] = [
     name: "Caja BRUNCH edición Mamá",
     price: 33.00,
     description: "Celebra a mamá con una caja brunch exclusiva: bollería gourmet, fruta fresca, zumo natural, mini sándwiches y una tarjeta personalizada. Un detalle delicioso y elegante para un día inolvidable.",
-    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80",
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=90",
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=60"
+    ],
   },
   {
     id: 2,
     name: "Cesta con rosado & Flores",
     price: 62.00,
     description: "Cesta premium con vino rosado Peñascal, tabla de ibéricos, bollería selecta y un ramo de flores frescas. Un regalo sofisticado que combina sabores y aromas para una experiencia única.",
-    image: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   {
     id: 3,
     name: "Cesta grande (brunch, taza, lata con galletas...)",
     price: 72.00,
     description: "Nuestra cesta más completa: incluye bollería variada, fruta, una taza exclusiva, lata con galletas artesanas, zumo natural y detalles sorpresa. Ideal para grandes celebraciones o para compartir en familia.",
-    image: "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   {
     id: 4,
     name: "Caja (madera) con brunch & zumo",
     price: 52.00,
     description: "Disfruta de un desayuno especial con nuestra caja de madera artesanal, repleta de bollería fresca, selección de frutas, mini sándwiches y zumo natural recién exprimido. Perfecta para sorprender y compartir momentos únicos.",
-    image: "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   {
     id: 5,
     name: "Cesta con Ibéricos | Puding | Queso premium",
     price: 55.00,
     description: "Cesta redonda con surtido de ibéricos, puding casero, selección de quesos premium y frutas frescas. El detalle perfecto para los amantes del buen comer.",
-    image: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   {
     id: 6,
     name: "Ramo flores de temporada",
     price: 22.00,
     description: "Ramo de flores frescas ideal para San Valentín.",
-    image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   {
     id: 7,
     name: "Peluche",
     price: 16.00,
     description: "Peluche tierno, complemento perfecto para tus detalles románticos.",
-    image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   {
     id: 8,
     name: "Taza (Edición San Valentín)",
     price: 6.00,
     description: "Taza temática especial para el día de los enamorados.",
-    image: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   {
     id: 9,
     name: "Tabla Ibérica (madera)",
     price: 55.00,
     description: "Tabla de madera con surtido de ibéricos. Sirve 2 personas.",
-    image: "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   {
     id: 10,
     name: "El Rayo Olarra",
     price: 18.00,
     description: "Botella de vino El Rayo Olarra para acompañar tu regalo.",
-    image: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   {
     id: 11,
     name: "Caja Ibérica | Peluche | Vino",
     price: 68.00,
     description: "Pack especial San Valentín: caja ibérica, peluche y vino.",
-    image: "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   {
     id: 12,
     name: "Caja Ibérica",
     price: 42.00,
     description: "Caja pequeña que sirve para 2 personas, ideal para compartir.",
-    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   // --- NUEVAS CAJAS/BANDEJAS GRAZE SHOP ---
   {
@@ -97,112 +123,144 @@ export const products: Product[] = [
     name: "Brunch pequeña (1/2 personas)",
     price: 28.00,
     description: "Caja 28x22 cm. Dulce con salado, embutidos, quesos, frutas, frutos secos, chocolate y bollerías.",
-    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   {
     id: 101,
     name: "Picoteo pequeña (1/2 personas)",
     price: 26.00,
     description: "Caja 28x22 cm. Pan, embutidos, quesos, frutas, encurtidos, picos y frutos secos.",
-    image: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   {
     id: 102,
     name: "Dulce pequeña (1/2 personas)",
     price: 24.00,
     description: "Caja 28x22 cm. Chocolate y bollería.",
-    image: "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   {
     id: 103,
     name: "Ibérica pequeña premium (1/2 personas)",
     price: 32.00,
     description: "Caja 28x22 cm. Pan, picos, quesos, frutas, frutos secos y embutidos ibéricos.",
-    image: "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   {
     id: 104,
     name: "Ibérica pequeña con pudim de cabracho (1/2 personas)",
     price: 34.00,
     description: "Caja 28x22 cm. Pudim de cabracho, quesos, embutidos ibéricos, frutas y frutos secos.",
-    image: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   {
     id: 105,
     name: "Flores ibéricas pequeña (1/2 personas)",
     price: 35.00,
     description: "Caja 28x22 cm. Más embutidos, quesos, frutas y picos.",
-    image: "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   {
     id: 110,
     name: "Brunch mediana (3/4 personas)",
     price: 44.00,
     description: "Caja 35x29 cm. Dulce con salado, embutidos, quesos, frutas, frutos secos, chocolate y bollerías.",
-    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   {
     id: 111,
     name: "Picoteo mediana (3/4 personas)",
     price: 42.00,
     description: "Caja 35x29 cm. Pan, embutidos, quesos, frutas, encurtidos, picos y frutos secos.",
-    image: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   {
     id: 112,
     name: "Ibérica mediana premium (3/4 personas)",
     price: 49.00,
     description: "Caja 35x29 cm. Pan, picos, quesos, frutas, frutos secos y embutidos ibéricos.",
-    image: "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   {
     id: 120,
     name: "Brunch grande (5/6 personas)",
     price: 59.00,
     description: "Caja 45x31 cm. Dulce con salado, embutidos, quesos, frutas, frutos secos, chocolate y bollerías.",
-    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   {
     id: 121,
     name: "Picoteo grande (5/6 personas)",
     price: 57.00,
     description: "Caja 45x31 cm. Pan, embutidos, quesos, frutas, encurtidos, picos y frutos secos.",
-    image: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   {
     id: 122,
     name: "Ibérica grande premium (5/6 personas)",
     price: 65.00,
     description: "Caja 45x31 cm. Pan, picos, quesos, frutas, frutos secos y embutidos ibéricos.",
-    image: "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   {
     id: 130,
     name: "Brunch XL (8/10 personas)",
     price: 89.00,
     description: "Caja 64x30 cm. Dulce con salado, embutidos, quesos, frutas, frutos secos, chocolate y bollerías.",
-    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   {
     id: 131,
     name: "Picoteo XL (8/10 personas)",
     price: 85.00,
     description: "Caja 64x30 cm. Pan, embutidos, quesos, frutas, encurtidos, picos y frutos secos.",
-    image: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   {
     id: 132,
     name: "Ibérica XL premium (8/10 personas)",
     price: 99.00,
     description: "Caja 64x30 cm. Pan, picos, quesos, frutas, frutos secos y embutidos ibéricos.",
-    image: "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   {
     id: 140,
     name: "Bocaditos XLL (15/20 personas)",
     price: 145.00,
     description: "Caja 59x39 cm. Dulce con salado. Media de 60/70 mini bocaditos sortidos (cruasán, medialunas, bocaditos de atún, pollo, jamón y queso, palmeritas, magdalenas). Ideal para eventos y reuniones.",
-    image: "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   // --- EXTRAS ---
   {
@@ -210,69 +268,89 @@ export const products: Product[] = [
     name: "Vino tinto",
     price: 12.00,
     description: "Botella de vino tinto seleccionada para maridar a la perfección con tu caja o cesta Graze Shop.",
-    image: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   {
     id: 201,
     name: "Vino blanco",
     price: 12.00,
     description: "Botella de vino blanco fresco, ideal para acompañar tus momentos especiales.",
-    image: "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   {
     id: 202,
     name: "Zumo natural 500ml",
     price: 4.00,
     description: "Zumo natural recién exprimido (500ml), perfecto para un desayuno saludable.",
-    image: "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   {
     id: 203,
     name: "Zumo natural 1L",
     price: 7.00,
     description: "Zumo natural recién exprimido (1 litro) para compartir en familia o grupo.",
-    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   {
     id: 204,
     name: "Caja de tostadas/picos/Pan",
     price: 3.50,
     description: "Caja con surtido de tostadas, picos y pan crujiente, el complemento ideal para tus tablas y cestas.",
-    image: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   {
     id: 205,
     name: "Ramo de flores de temporada",
     price: 22.00,
     description: "Ramo de flores frescas de temporada, perfecto para dar un toque especial a tu regalo.",
-    image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   {
     id: 206,
     name: "Florero de temporada",
     price: 18.00,
     description: "Florero con flores frescas de temporada, elegante y listo para decorar cualquier espacio.",
-    image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   {
     id: 207,
     name: "Orquídea",
     price: 28.00,
     description: "Orquídea natural en maceta, un detalle sofisticado y duradero para sorprender.",
-    image: "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   {
     id: 208,
     name: "Peluche",
     price: 16.00,
     description: "Peluche tierno, complemento perfecto para tus detalles románticos o familiares.",
-    image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+    ],
   },
   {
     id: 209,
     name: "Taza",
     price: 6.00,
     description: "Taza exclusiva Graze Shop, ideal para acompañar tus desayunos y meriendas.",
-    image: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80"
+    ],
   },
 ];
