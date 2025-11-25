@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Graze Shop
 
-## Getting Started
+**Tienda online de packs gourmet, cestas de regalo y experiencias gastronómicas a domicilio.**  
+Desarrollada con Next.js 16, TypeScript y TailwindCSS.
 
-First, run the development server:
+---
 
-```bash
+## 🚀 Características
+
+- Landing page móvil y desktop optimizada para conversión
+- Slider horizontal con los productos más destacados
+- Packs personalizables, variedad de cajas y cestas temáticas
+- Soporte para imágenes propias y visualización optimizada
+- Componentes modulares y fáciles de escalar
+- Ready para desplegar en Vercel
+
+---
+
+## 🛠️ Tecnologías
+
+- [Next.js 16](https://nextjs.org/)
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- Imágenes propias en `/public/img/`
+
+---
+
+## 📦 Estructura de carpetas
+
+src/
+app/ # Páginas principales (Next.js App Router)
+components/ # Componentes reutilizables
+data/ # Datos estáticos (productos.ts)
+public/
+img/ # Tus propias imágenes para productos
+favicon.ico
+README.md # Este archivo
+next.config.js # Configuración Next.js
+tailwind.config.js
+
+
+---
+
+## ⚡ Instalación y uso local
+
+git clone https://github.com/tu-usuario/graze-shop.git
+cd graze-shop
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+text
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+La web estará disponible en [http://localhost:3000](http://localhost:3000)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🖼️ Usar tus propias imágenes
 
-To learn more about Next.js, take a look at the following resources:
+Coloca las fotos de tus productos en la carpeta `/public/img/`.  
+En cada entrada del array de productos (en `/src/data/products.ts`), referencia la imagen como:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+images: ["/img/nombre-foto.jpg"]
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+text
 
-## Deploy on Vercel
+Se recomienda formato `.jpg` o `.webp` y un tamaño ideal de **600x600px** (<200kb) para mejor rendimiento.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## ✨ Añadir productos
+
+Edita `/src/data/products.ts` y añade tu producto siguiendo este formato:
+
+{
+id: 4,
+name: "Cesta Gourmet Deluxe",
+price: 70,
+description: "Incluye bebidas, jamón, queso y mucho más.",
+images: ["/img/cesta-deluxe.jpg"],
+}
+
+
+
+---
+
+## 📝 Contribuir
+
+¿Quieres mejorar el diseño, añadir nuevos packs o ampliar funcionalidades?  
+- Haz fork y tu rama `feature/mi-aporte`
+- Abre un Pull Request y describe tus cambios
+- Se agradecen propuestas visuales y feedback de usabilidad
+
+---
+
+## 🗄️ Despliegue
+
+Este proyecto está listo para despliegue directo en [Vercel](https://vercel.com/):  
+- Solo haz “Import Project” y selecciona el repo  
+- Vercel detecta Next.js, instala dependencias y publica tu app rápidamente
+
+---
+
+## 📧 Contacto
+
+Para dudas sobre el proyecto, colaboraciones o soporte, contáctanos en  
+**tu-email@ejemplo.com**
+
+---
+
+**© 2025 Graze Shop • Tu tienda gourmet online**

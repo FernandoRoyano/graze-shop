@@ -1,12 +1,13 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 interface ProductCardProps {
     id: number;
     name: string;
     price: number;
-    image?: string;
+    images: string[]; // Cambiado de image a images (array)
     description?: string;
     category?: string;
 }
@@ -15,15 +16,24 @@ const ProductCard: React.FC<ProductCardProps> = ({
     id,
     name,
     price,
-    image,
+    images,
     description,
     category
 }) => {
+    // Usar la primera imagen del array
+    const mainImage = images && images.length > 0 ? images[0] : null;
+
     return (
         <div className="product-card-graze">
             <div className="product-image-graze">
-                {image ? (
-                    <img src={image} alt={name} />
+                {mainImage ? (
+                    <Image
+                        src={mainImage}
+                        alt={name}
+                        width={300}
+                        height={300}
+                        className="w-full h-full object-cover rounded-lg"
+                    />
                 ) : (
                     <div className="placeholder-image-graze">
                         <span>🧀🍇🥖</span>
@@ -33,9 +43,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
             <div className="product-info-graze">
                 {category && <span className="product-category">{category}</span>}
                 <h4 className="product-name">{name}</h4>
-                {description && <p className="product-desc">{description}</p>}
+                {description && (
+                    <p className="product-desc line-clamp-2">{description}</p>
+                )}
                 <div className="product-footer-graze">
-                    <span className="product-price">{price.toFixed(2)}€</span>
+                    <span className="product-price">{price}€</span>
                     <button className="btn-add-graze">Añadir</button>
                 </div>
             </div>
