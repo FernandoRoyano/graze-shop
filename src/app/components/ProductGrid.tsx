@@ -2,54 +2,73 @@
 
 import React from 'react';
 import ProductCard from './ProductCard';
+import productos from '@/data/products';
 
-interface Product {
-    id: number;
-    name: string;
-    price: number;
-    image?: string;
-    description?: string;
-    category?: string;
-}
+// Define el tipo Product para mayor claridad y reusabilidad.
+type Product = typeof productos[number];
 
 interface ProductGridProps {
     products?: Product[];
 }
 
 const ProductGrid: React.FC<ProductGridProps> = ({ products }) => {
-    const defaultProducts: Product[] = [
-        { id: 1, name: 'Caja Ibérica + Peluche + Vino', price: 68.0, description: 'Pack completo San Valentín', category: 'San Valentín' },
-        { id: 2, name: 'Caja Ibérica SAN Valentín', price: 42.0, description: 'Selección premium de ibéricos', category: 'San Valentín' },
-        { id: 3, name: 'Ramo flores de temporada', price: 22.0, description: 'Flores frescas artesanales', category: 'San Valentín' },
-        { id: 4, name: 'Tabla Ibérica madera', price: 55.0, description: 'TAM 30x30 - Tabla artesanal', category: 'San Valentín' },
-        { id: 5, name: 'Caja grande BRUNCH', price: 59.0, description: 'Sirve 5-6 personas', category: 'Principales' },
-        { id: 6, name: 'Caja Mediana', price: 45.0, description: 'Sirve 3-4 personas', category: 'Principales' },
-        { id: 7, name: 'Caja Pequeña PICOTEO', price: 33.0, description: 'Sirve 2-3 personas', category: 'Principales' },
-        { id: 8, name: 'Caja mediana ibérica', price: 57.0, description: 'Selección premium ibéricos', category: 'Principales' },
-        { id: 9, name: 'Caja vegetariana mediana', price: 45.0, description: 'Variedad de quesos + frutas', category: 'Principales' },
-        { id: 10, name: 'Caja picoteo XL', price: 85.0, description: 'Sirve 8-9 personas', category: 'Principales' },
-        { id: 11, name: 'Caja BRUNCH edición Mamá', price: 33.0, description: 'Nuestra caja brunch versión especial', category: 'Día de la Madre' },
-        { id: 12, name: 'Cesta con rosado + Flores', price: 62.0, description: 'Cesta, peñascal, bandeja...', category: 'Día de la Madre' },
-    ];
+    // Usamos el listado por props si viene, si no el import global
+    const displayProducts = products ?? productos;
 
-    const displayProducts = products || defaultProducts;
-    const categories = Array.from(new Set(displayProducts.map((p) => p.category)));
+    // Agrupamos por categoría
+    const categoriesRaw = Array.from(
+        new Set(displayProducts.map((p) => p.category ?? 'Sin categoría'))
+    );
 
+    // Si quieres que 'Sin categoría' salga siempre la última
+    const categories =
+        categoriesRaw.includes('Sin categoría')
+            ? [...categoriesRaw.filter((c) => c !== 'Sin categoría'), 'Sin categoría']
+            : categoriesRaw;
+
+    // Si no hay productos, muestra aviso didáctico y accesible
+    if (!displayProducts.length) {
+        return (
+            <section id="cajas" className="product-grid-section-graze my-12">
+                <div className="section-header-graze">
+                    <h2 className="text-3xl font-bold">Nuestras Cajas Gourmet</h2>
+                    <p>Perfectas para celebraciones, reuniones y eventos especiales</p>
+                </div>
+                <p className="text-gray-500 my-10 text-lg">No hay productos disponibles en este momento.</p>
+            </section>
+        );
+    }
+
+    // Render principal: categorías y grid de productos
     return (
         <section id="cajas" className="product-grid-section-graze">
             <div className="section-header-graze">
-                <h2>Nuestras Cajas Gourmet</h2>
+                <h2 className="text-3xl font-bold">Nuestras Cajas Gourmet</h2>
                 <p>Perfectas para celebraciones, reuniones y eventos especiales</p>
             </div>
 
             {categories.map((category) => (
                 <div key={category} className="category-section">
-                    <h3 className="category-title">{category}</h3>
+                    {/* Título grande y accesible con línea decorativa */}
+                    <h3 className="text-4xl font-bold mt-12 mb-8 text-gray-900 dark:text-gray-100 tracking-tight border-b-2 border-pink-500 pb-3">
+                        {category}
+                    </h3>
+
+                    {/* Grid responsivo de productos */}
                     <div className="product-grid-graze">
                         {displayProducts
-                            .filter((p) => p.category === category)
+                            .filter((p) => (p.category ?? 'Sin categoría') === category)
                             .map((product) => (
-                                <ProductCard key={product.id} {...product} />
+                                <ProductCard
+                                    key={product.id}
+                                    id={product.id}
+                                    name={product.name}
+                                    price={product.price}
+                                    images={product.images}
+                                    description={product.description}
+                                    category={product.category}
+                                // Pasa props adicionales si tu ProductCard lo requiere
+                                />
                             ))}
                     </div>
                 </div>

@@ -7,14 +7,7 @@ const Footer: React.FC = () => {
 
     return (
         <>
-            {/* Sección Empresas */}
-            <section id="empresas" className="business-section-graze">
-                <div className="business-container">
-                    <h2>Soluciones para Empresas</h2>
-                    <p>Regalos corporativos, eventos, facturación a medida</p>
-                    <button className="btn-primary-graze">Solicita presupuesto</button>
-                </div>
-            </section>
+
 
             {/* Footer */}
             <footer className="footer-graze">
