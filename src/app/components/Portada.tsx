@@ -69,7 +69,7 @@ export default function Portada() {
                             Sorprende con nuestras cajas gourmet
                         </h1>
                         <p style={{ fontSize: '1.25rem', marginBottom: '2rem', opacity: 0.95 }}>
-                            Para San Valentín, Navidad, Día de la Madre y más
+                            Para Navidad, Fin de Año, Día de la Madre y más
                         </p>
 
                         <div
@@ -123,15 +123,16 @@ export default function Portada() {
                             style={{
                                 marginTop: '1.5rem',
                                 display: 'inline-block',
-                                background: '#dc2626',
+                                background: '#2563eb',
                                 padding: '0.75rem 1.5rem',
                                 borderRadius: '8px',
                                 fontWeight: '600'
                             }}
                         >
-                            🔥 Edición San Valentín - Stock limitado
+                            🎄 Edición Navidad y Fin de Año - Stock limitado
                         </div>
                     </div>
+
 
                     {/* Columna derecha = logo */}
                     <div
@@ -208,22 +209,22 @@ export default function Portada() {
                 </div>
             </section>
 
-            {/* ¿POR QUÉ ELEGIRNOS? - FONDO GRIS MEDIO */}
             <section
                 style={{
-                    background: '#1a1a1a',
+                    background: 'linear-gradient(120deg, #23272e 70%, #2c3440 100%)', // fondo elegante no tan oscuro
                     padding: '5rem 2rem',
-                    borderTop: '1px solid #333',
-                    borderBottom: '1px solid #333'
+                    borderTop: '1px solid #2d2d34',
+                    borderBottom: '1px solid #2d2d34'
                 }}
             >
                 <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
                     <h2
                         style={{
-                            fontSize: '2.5rem',
+                            fontSize: '2.4rem',
                             textAlign: 'center',
-                            marginBottom: '0.5rem',
-                            color: '#ffffff'
+                            marginBottom: '0.6rem',
+                            color: '#f3f5f7',
+                            fontWeight: 700
                         }}
                     >
                         ¿Por qué elegirnos?
@@ -231,18 +232,18 @@ export default function Portada() {
                     <p
                         style={{
                             textAlign: 'center',
-                            color: '#a3a3a3',
-                            marginBottom: '3rem',
-                            fontSize: '1.125rem'
+                            color: '#bfc3cc',
+                            marginBottom: '2.2rem',
+                            fontSize: '1.11rem'
                         }}
                     >
-                        La mejor experiencia gourmet con envío rápido y seguro
+                        Experiencia gourmet premium con envío seguro y atención personalizada
                     </p>
 
                     <div
                         style={{
                             display: 'grid',
-                            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+                            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', // tamaño igual a antes
                             gap: '2rem'
                         }}
                     >
@@ -250,21 +251,23 @@ export default function Portada() {
                             <div
                                 key={i}
                                 style={{
-                                    background: '#262626',
-                                    padding: '2.5rem 2rem',
-                                    borderRadius: '12px',
-                                    border: '1px solid #404040',
+                                    background: 'rgba(33,36,44,0.92)',
+                                    backdropFilter: 'blur(2px)',
+                                    padding: '2rem 1.5rem', // menos padding
+                                    borderRadius: '14px',
+                                    border: '1.5px solid #404040',
+                                    boxShadow: '0 8px 24px #0002',
                                     display: 'flex',
                                     flexDirection: 'column',
                                     alignItems: 'center',
                                     textAlign: 'center',
-                                    gap: '1.25rem',
-                                    transition: 'all 0.3s',
-                                    cursor: 'pointer'
+                                    gap: '1.1rem',
+                                    cursor: 'pointer',
+                                    transition: 'all 0.32s cubic-bezier(.7,.3,.3,1)'
                                 }}
                                 onMouseEnter={e => {
-                                    e.currentTarget.style.transform = 'translateY(-8px)';
-                                    e.currentTarget.style.borderColor = '#3b82f6';
+                                    e.currentTarget.style.transform = 'translateY(-5px)';
+                                    e.currentTarget.style.borderColor = '#576cfa';
                                 }}
                                 onMouseLeave={e => {
                                     e.currentTarget.style.transform = 'translateY(0)';
@@ -273,24 +276,24 @@ export default function Portada() {
                             >
                                 <div
                                     style={{
-                                        background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
-                                        width: '80px',
-                                        height: '80px',
-                                        borderRadius: '50%',
+                                        background: 'rgba(59,130,246,0.11)',
+                                        border: '2px solid #94a3b8',
+                                        width: '70px', // icon más pequeño
+                                        height: '70px',
+                                        borderRadius: '18px',
                                         display: 'flex',
                                         alignItems: 'center',
                                         justifyContent: 'center',
-                                        fontSize: '2.5rem',
-                                        boxShadow: '0 8px 16px rgba(59, 130, 246, 0.3)'
+                                        fontSize: '2.1rem'
                                     }}
                                 >
                                     {v.icono}
                                 </div>
                                 <h3
                                     style={{
-                                        color: '#ffffff',
-                                        fontSize: '1.25rem',
-                                        fontWeight: '600',
+                                        color: '#e0e7ef',
+                                        fontSize: '1.15rem',
+                                        fontWeight: 600,
                                         margin: 0
                                     }}
                                 >
@@ -301,6 +304,7 @@ export default function Portada() {
                     </div>
                 </div>
             </section>
+
 
             {/* TESTIMONIOS - FONDO MÁS OSCURO */}
             <section
